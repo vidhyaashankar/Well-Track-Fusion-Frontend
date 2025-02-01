@@ -11,9 +11,22 @@ const Login = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  const dummyCredentials = {
+    email: "test@example.com", // Dummy email
+    password: "password123"     // Dummy password
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+
+    // Check against dummy credentials for debug purpose
+    if (email === dummyCredentials.email && password === dummyCredentials.password) {
+      localStorage.setItem("token", "dummyToken123"); // Simulated token
+      console.log("Login successful:", { email });
+      navigate("/dashboard");
+      return; // Exit the function after successful dummy login
+    }
 
     try {
       const response = await fetch("http://localhost:5000/api/login", {
@@ -61,22 +74,22 @@ const Login = () => {
           <div className="login-form-group">
             <label htmlFor="password">Password:</label>
             <div className="password-input-wrapper">
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="************"
-              className="login-input"
-              required
-            />
-            <button
-              type="button"
-              className="toggle-password-btn"
-              onClick={() => setShowPassword(!showPassword)}
-            >
-              {showPassword ? <FaEyeSlash /> : <FaEye />}
-            </button>
+              <input
+                type={showPassword ? "text" : "password"}
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="************"
+                className="login-input"
+                required
+              />
+              <button
+                type="button"
+                className="toggle-password-btn"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              </button>
             </div>
           </div>
           <button type="submit" className="ctaButton btn btn-accent">Login</button>
