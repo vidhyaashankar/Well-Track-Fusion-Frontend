@@ -1,0 +1,135 @@
+/* Login container */
+.login-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Left side (GIF) */
+.login-left-card {
+  flex: 3; /* Takes up 3/4 of the page */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #72c3c9;;
+  padding: 20px;
+}
+
+/* Right side (Login form) */
+.login-right-card {
+  flex: 2; /* Takes up 1/4 of the page */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+/* Form styling */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.login-form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.login-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+.register-link {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.register-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+/* Error message styling */
+.error-message {
+  position: absolute; /* Position it absolutely */
+  top: 10px; /* Adjust the top position as needed */
+  left: 50%; /* Center horizontally */
+  font-size: small;
+  transform: translateX(-50%); /* Center horizontally */
+  background-color: #ffebee; /* Light red background */
+  color: #c62828; /* Dark red text */
+  padding: 10px 20px; /* Padding for better readability */
+  border-radius: 4px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  animation: fadeOut 5s forwards; /* Fade out after 5 seconds */
+  z-index: 10; /* Ensure it appears above other elements */
+}
+
+/* Fade-out animation */
+@keyframes fadeOut {
+  0% {
+    opacity: 1; /* Fully visible */
+  }
+  90% {
+    opacity: 1; /* Stay visible for most of the time */
+  }
+  100% {
+    opacity: 0; /* Fade out completely */
+    visibility: hidden; /* Hide after fading out */
+  }
+}
+
+@media (max-width: 768px) {
+  .login-left-card {
+    display: none; /* Hide the left card on screens smaller than 768px */
+  }
+
+  .login-right-card {
+    width: 100%; /* Make the right card full width */
+    padding: 20px; /* Add padding to the right card */
+  }
+
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .login-container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align the cards */
+    background: linear-gradient(135deg, #F4F2F3, #C0A9BD, #94A7AE, #64766A);
+    background-size: 400% 400%; /* Allow for smoother animation */
+    animation: gradientAnimation 15s ease infinite; /* Apply the animation */
+    min-height: 100vh; /* Set the minimum height to 100% of the viewport height */
+  }
+}
+
+/* Ensure the container has flex properties */
+.login-container {
+  display: flex;
+  justify-content: space-between; /* Space between left and right cards */
+}
