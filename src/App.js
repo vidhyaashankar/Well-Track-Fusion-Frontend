@@ -8,8 +8,10 @@ import Register from './pages/Register/Register';
 import Dashboard from './pages/Dashboard/Dashboard';
 import FoodHistory from './pages/FoodHistory/FoodHistory';
 import ExerciseHistory from './pages/ExerciseHistory/ExerciseHistory';
+import NutriBot from './pages/NutriBot/NutriBot';
 import './App.css';
 import './styles/globals.css';
+
 
 function AppContent() {
   const location = useLocation();
@@ -26,6 +28,7 @@ function AppContent() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/food-history" element={<FoodHistory />} />
           <Route path="/exercise-history" element={<ExerciseHistory />} />
+          <Route path="/nutriBot" element={<NutriBot/>}/>
         </Routes>
       </main>
       {!hideNavbarAndFooter && <Footer />}
