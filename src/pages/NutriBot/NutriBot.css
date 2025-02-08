@@ -1,0 +1,142 @@
+.nutribot-container {
+  height: 600px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+}
+
+.nutribot-chatbox {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  background: #f7f9fc;
+}
+
+.message {
+  max-width: 80%;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+  font-size: 14px;
+  line-height: 1.4;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.user {
+  align-self: flex-end;
+  background: var(--color-primary);
+  color: white;
+}
+
+.bot {
+  align-self: flex-start;
+  background: var(--color-secondary);
+  color: white;
+}
+
+.nutribot-input-area {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  border-top: 1px solid #e0e0e0;
+  background: white;
+  position: relative;
+}
+.nutribot-textarea {
+  width: 100%;
+  min-height: 40px;
+  max-height: 120px; /* Prevent excessive expansion */
+  overflow-y: auto; /* Show scrollbar when exceeding max height */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  resize: none; /* Disable manual resizing */
+  outline: none;
+  transition: height 0.2s ease-in-out; /* Smooth transition */
+}
+
+
+.nutribot-textarea:focus {
+  border-color: var(--color-accent);
+  outline: none; /* Ensures no outline even when focused */
+}
+
+.nutribot-send-button {
+  position: absolute;
+  bottom: 32px;
+  right: 15px;
+  background: var(--color-accent);
+  color: white;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nutribot-send-button:hover {
+  background: var(--color-secondary);
+}
+
+/* Loading Indicator */
+.loading-indicator {
+  align-self: flex-start;
+  padding: 10px;
+  background: var(--color-secondary);
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Table Styling */
+.message table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.message th,
+.message td {
+  border: 1px solid var(--color-accent);
+  padding: 8px;
+  text-align: left;
+}
+
+.message th {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+/* Make tables responsive */
+.message table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+
