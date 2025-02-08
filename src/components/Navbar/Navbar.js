@@ -74,6 +74,9 @@ const Navbar = () => {
                 <Link to="/exercise-history" className="navbar-link" onClick={closeMenu}>Exercise History</Link>
               </li>
               <li className="navbar-item">
+                <Link to="/nutribot" className="navbar-link" onClick={closeMenu}>NutriBot</Link>
+              </li>
+              <li className="navbar-item">
                 <button className="navbar-link logout-button" onClick={handleLogout}>Logout</button>
               </li>
             </>
